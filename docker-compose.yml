@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  web:
+    container_name: siruang_api_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3101:3101"
+    restart: unless-stopped
