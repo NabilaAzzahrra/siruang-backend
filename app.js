@@ -23,6 +23,9 @@ const {
   SesiFive,
   SesiSix,
   Satu,
+  SesiSatuRealtime,
+  SesiDuaRealtime,
+  SesiTigaRealtime,
 } = require("./models");
 
 const allowedOriginSocket = [
@@ -30,6 +33,7 @@ const allowedOriginSocket = [
   "http://127.0.0.1:8000",
   "http://127.0.0.1:5173",
   "http://localhost:5173",
+  "http://192.168.120.92:8000",
 ];
 
 var app = express();
@@ -85,6 +89,18 @@ io.on("connection", (socket) => {
       enam,
     };
     io.emit("Rooms", data);
+  });
+
+  socket.on("getSesi", async (response) => {
+    const sesiSatu = await SesiSatuRealtime.findAll();
+    const sesiDua = await SesiDuaRealtime.findAll();
+    const sesiTiga = await SesiTigaRealtime.findAll();
+    const data = {
+      sesiSatu,
+      sesiDua,
+      sesiTiga,
+    };
+    io.emit("Sesis", data);
   });
 
   socket.on("getBooking", async (response) => {
