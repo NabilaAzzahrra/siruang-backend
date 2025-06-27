@@ -1,17 +1,17 @@
 require("dotenv").config();
-var express = require("express");
+const express = require("express");
 const { Server } = require("socket.io");
 const http = require("http");
-var path = require("path");
+const path = require("path");
 const cors = require("cors");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var ruanganRouter = require("./routes/ruangan");
-var sesiRouter = require("./routes/sesi");
-var sesiOneRouter = require("./routes/sesiOne");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const ruanganRouter = require("./routes/ruangan");
+const sesiRouter = require("./routes/sesi");
+const sesiOneRouter = require("./routes/sesiOne");
 const { Ruang } = require("./models");
 const ruang = require("./models/ruang");
 
@@ -33,10 +33,14 @@ const allowedOriginSocket = [
   "http://127.0.0.1:8000",
   "http://127.0.0.1:5173",
   "http://localhost:5173",
+<<<<<<< HEAD
   "http://192.168.120.92:8000",
+=======
+  "https://siruang.politekniklp3i-tasikmalaya.ac.id",
+>>>>>>> dc5c00b00291245e7d31ad50c4a90a36d51b0f30
 ];
 
-var app = express();
+const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
@@ -51,7 +55,6 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
@@ -67,7 +70,6 @@ app.use(function (err, req, res, next) {
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   res.status(err.status || 500);
-  res.render("error");
 });
 
 io.on("connection", (socket) => {
