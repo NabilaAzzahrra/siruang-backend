@@ -26,18 +26,19 @@ const {
   SesiSatuRealtime,
   SesiDuaRealtime,
   SesiTigaRealtime,
+  SesiEmpatRealtime,
+  SesiLimaRealtime,
+  SesiEnamRealtime,
 } = require("./models");
+
 
 const allowedOriginSocket = [
   "http://127.0.0.1:5500",
   "http://127.0.0.1:8000",
   "http://127.0.0.1:5173",
   "http://localhost:5173",
-<<<<<<< HEAD
   "http://192.168.120.92:8000",
-=======
-  "https://siruang.politekniklp3i-tasikmalaya.ac.id",
->>>>>>> dc5c00b00291245e7d31ad50c4a90a36d51b0f30
+  "https://siruang.politeknikp3i-tasikmalaya.ac.id"
 ];
 
 const app = express();
@@ -97,10 +98,16 @@ io.on("connection", (socket) => {
     const sesiSatu = await SesiSatuRealtime.findAll();
     const sesiDua = await SesiDuaRealtime.findAll();
     const sesiTiga = await SesiTigaRealtime.findAll();
+    const sesiEmpat = await SesiEmpatRealtime.findAll();
+    const sesiLima = await SesiLimaRealtime.findAll();
+    const sesiEnam = await SesiEnamRealtime.findAll();
     const data = {
       sesiSatu,
       sesiDua,
       sesiTiga,
+      sesiEmpat,
+      sesiLima,
+      sesiEnam,
     };
     io.emit("Sesis", data);
   });
