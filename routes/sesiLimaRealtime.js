@@ -4,6 +4,7 @@ const { SesiLimaRealtime } = require("../models");
 
 /* GET home page. */
 router.get("/", async (req, res, next) => {
+  console.log("Route /sesiSatu diakses");
   try {
     const response = await SesiLimaRealtime.findAll();
     return res.status(200).json(response);
