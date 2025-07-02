@@ -4,6 +4,7 @@ const { SesiSatuRealtime } = require('../models');
 
 /* GET home page. */
 router.get('/', async(req, res, next)=> {
+  console.log("Route /sesiSatu diakses");
   try {
     const response = await SesiSatuRealtime.findAll();
     return res.status(200).json(response);
