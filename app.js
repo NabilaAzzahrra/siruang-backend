@@ -12,6 +12,7 @@ const usersRouter = require("./routes/users");
 const ruanganRouter = require("./routes/ruangan");
 const sesiRouter = require("./routes/sesi");
 const sesiOneRouter = require("./routes/sesiOne");
+const sesiSatuRouter = require("./routes/sesiSatuRealitime");
 const { Ruang } = require("./models");
 const ruang = require("./models/ruang");
 
@@ -30,6 +31,7 @@ const {
   SesiLimaRealtime,
   SesiEnamRealtime,
 } = require("./models");
+const sesiSatuRealtime = require("./models/sesiSatuRealtime");
 
 
 const allowedOriginSocket = [
@@ -61,6 +63,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/ruangan", ruanganRouter);
 app.use("/sesi", sesiRouter);
+app.use("/sesiSatu", sesiSatuRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
