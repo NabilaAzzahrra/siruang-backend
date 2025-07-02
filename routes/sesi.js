@@ -4,6 +4,7 @@ const { Sesi } = require('../models');
 
 /* GET home page. */
 router.get('/', async(req, res, next)=> {
+  console.log("Route /sesi diakses");
   try {
     const response = await Sesi.findAll();
     return res.status(200).json(response);
