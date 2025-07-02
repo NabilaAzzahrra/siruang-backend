@@ -12,7 +12,7 @@ const usersRouter = require("./routes/users");
 const ruanganRouter = require("./routes/ruangan");
 const sesiRouter = require("./routes/sesi");
 const sesiOneRouter = require("./routes/sesiOne");
-const sesiSatuRouter = require("./routes/sesiSatuRealitime");
+const sesiSatuRouter = require("./routes/sesiSatuRealtime");
 const { Ruang } = require("./models");
 const ruang = require("./models/ruang");
 
