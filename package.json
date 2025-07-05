@@ -9,12 +9,20 @@
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.6.1",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
     "mysql2": "^3.12.0",
+    "puppeteer": "^24.11.2",
+    "qrcode-terminal": "^0.12.0",
     "sequelize": "^6.37.5",
     "sequelize-cli": "^6.6.2",
-    "socket.io": "^4.8.1"
-  }
+    "socket.io": "^4.8.1",
+    "whatsapp-web.js": "^1.31.0"
+  },
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

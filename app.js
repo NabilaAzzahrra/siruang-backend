@@ -1,11 +1,13 @@
 require("dotenv").config();
 const express = require("express");
 const { Server } = require("socket.io");
+const { Client, LocalAuth } = require("whatsapp-web.js");
 const http = require("http");
 const path = require("path");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const qrcode = require("qrcode-terminal");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -13,6 +15,7 @@ const ruanganRouter = require("./routes/ruangan");
 const sesiRouter = require("./routes/sesi");
 const sesiOneRouter = require("./routes/sesiOne");
 const sesiSatuRouter = require("./routes/sesiSatuRealtime");
+const waRouter = require("./routes/wa");
 const { Ruang } = require("./models");
 const ruang = require("./models/ruang");
 
@@ -33,14 +36,13 @@ const {
 } = require("./models");
 const sesiSatuRealtime = require("./models/sesiSatuRealtime");
 
-
 const allowedOriginSocket = [
   "http://127.0.0.1:5500",
   "http://127.0.0.1:8000",
   "http://127.0.0.1:5173",
   "http://localhost:5173",
   "http://192.168.120.92:8000",
-  "https://siruang.politeknikp3i-tasikmalaya.ac.id"
+  "https://siruang.politeknikp3i-tasikmalaya.ac.id",
 ];
 
 const app = express();
@@ -64,6 +66,7 @@ app.use("/users", usersRouter);
 app.use("/ruangan", ruanganRouter);
 app.use("/sesi", sesiRouter);
 app.use("/sesiSatu", sesiSatuRouter);
+app.use("/", waRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
@@ -128,4 +131,29 @@ io.on("connection", (socket) => {
   });
 });
 
-module.exports = { app, server };
+// Inisialisasi client WA
+const client = new Client({
+  authStrategy: new LocalAuth(),
+  puppeteer: {
+    executablePath: require("puppeteer").executablePath(),
+  },
+});
+
+client.on("qr", (qr) => {
+  qrcode.generate(qr, { small: true });
+});
+
+client.on("ready", () => {
+  console.log("WhatsApp client is ready!");
+});
+
+client.initialize();
+client.on("message", (message) => {
+  console.log(`📥 Pesan MASUK dari ${message.from}: ${message.body}`);
+});
+
+client.on("message_create", (msg) => {
+  console.log(`📤 Pesan KELUAR ke ${msg.to || msg.from}: ${msg.body}`);
+});
+
+module.exports = { app, server, client };

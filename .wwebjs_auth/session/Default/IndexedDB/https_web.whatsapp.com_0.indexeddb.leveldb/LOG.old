@@ -1,0 +1,45 @@
+2025/07/05-11:59:15.602 2cb0 Reusing MANIFEST D:\2-WORK\1-LP3I-PROGRAMMER\PENDIDIKAN-SIRUANG REALTIME EXPRESSJS\myapp\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/05-11:59:15.605 2cb0 Recovering log #1763
+2025/07/05-11:59:15.643 2cb0 Reusing old log D:\2-WORK\1-LP3I-PROGRAMMER\PENDIDIKAN-SIRUANG REALTIME EXPRESSJS\myapp\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001763.log 
+2025/07/05-11:59:17.391 2cb0 Level-0 table #1781: started
+2025/07/05-11:59:17.423 2cb0 Level-0 table #1781: 387851 bytes OK
+2025/07/05-11:59:17.427 2cb0 Delete type=0 #1763
+2025/07/05-11:59:17.430 45cc Manual compaction at level-0 from '\x00'\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00(\x00\x00\x00' @ 0 : 0; will stop at '\x00'\x00\x00\x05' @ 4563622 : 1
+2025/07/05-11:59:17.431 45cc Compacting 1@0 + 0@1 files
+2025/07/05-11:59:17.450 45cc Generated table #1782@0: 8634 keys, 170993 bytes
+2025/07/05-11:59:17.455 45cc Generated table #1783@0: 48 keys, 5454 bytes
+2025/07/05-11:59:17.455 45cc Compacted 1@0 + 0@1 files => 176447 bytes
+2025/07/05-11:59:17.456 45cc compacted to: files[ 0 2 33 0 0 0 0 ]
+2025/07/05-11:59:17.457 45cc Delete type=2 #1781
+2025/07/05-11:59:17.458 2cb0 Manual compaction at level-0 from '\x00'\x00\x00\x05' @ 4563622 : 1 .. '\x00(\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/05-11:59:19.586 18a4 Compacting 1@1 + 2@2 files
+2025/07/05-11:59:19.690 18a4 Generated table #1784@1: 86513 keys, 2235827 bytes
+2025/07/05-11:59:19.769 18a4 Generated table #1785@1: 60533 keys, 2240009 bytes
+2025/07/05-11:59:19.773 18a4 Generated table #1786@1: 51 keys, 30256 bytes
+2025/07/05-11:59:19.773 18a4 Compacted 1@1 + 2@2 files => 4506092 bytes
+2025/07/05-11:59:19.774 18a4 compacted to: files[ 0 1 34 0 0 0 0 ]
+2025/07/05-11:59:19.775 18a4 Delete type=2 #1767
+2025/07/05-11:59:19.776 18a4 Delete type=2 #1768
+2025/07/05-11:59:19.776 18a4 Delete type=2 #1782
+2025/07/05-11:59:20.798 18a4 Compacting 1@1 + 9@2 files
+2025/07/05-11:59:20.900 18a4 Generated table #1787@1: 26004 keys, 2236737 bytes
+2025/07/05-11:59:20.945 18a4 Generated table #1788@1: 13173 keys, 2143260 bytes
+2025/07/05-11:59:20.997 18a4 Generated table #1789@1: 14770 keys, 2141898 bytes
+2025/07/05-11:59:21.060 18a4 Generated table #1790@1: 44187 keys, 2177162 bytes
+2025/07/05-11:59:21.169 18a4 Generated table #1791@1: 108857 keys, 2262698 bytes
+2025/07/05-11:59:21.271 18a4 Generated table #1792@1: 100420 keys, 2249764 bytes
+2025/07/05-11:59:21.379 18a4 Generated table #1793@1: 100975 keys, 2251994 bytes
+2025/07/05-11:59:21.487 18a4 Generated table #1794@1: 100236 keys, 2248822 bytes
+2025/07/05-11:59:21.595 18a4 Generated table #1795@1: 95630 keys, 2151944 bytes
+2025/07/05-11:59:21.595 18a4 Compacted 1@1 + 9@2 files => 19864279 bytes
+2025/07/05-11:59:21.597 18a4 compacted to: files[ 0 0 34 0 0 0 0 ]
+2025/07/05-11:59:21.598 18a4 Delete type=2 #1770
+2025/07/05-11:59:21.598 18a4 Delete type=2 #1771
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1772
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1773
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1774
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1775
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1776
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1777
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1778
+2025/07/05-11:59:21.599 18a4 Delete type=2 #1783
